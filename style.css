@@ -1,0 +1,1420 @@
+/* ==================================================
+   1. VARIABLES
+================================================== */
+
+:root {
+    --black: #000;
+    --white: #fff;
+    --red: #960103;
+    --pink: #d69baa;
+    --light-pink: #f3dfe5;
+    --old-pink: #7c4f5d;
+
+    --radius-small: 12px;
+    --radius-medium: 22px;
+    --radius-large: 38px;
+
+    --page-width: 1280px;
+
+    --padding-section: 55px 70px;
+}
+
+
+/* ==================================================
+   2. GENERAL
+================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: var(--page-width);
+    margin: auto;
+
+    background-color: var(--black);
+
+    font-family: "Montserrat", sans-serif;
+    color: var(--black);
+}
+
+.page-title {
+    padding: 28px 20px 18px;
+    font-family: "Pinyon Script", cursive;
+    font-size: 60px;
+    font-weight: 400;
+    text-align: center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+main h2, .page-title {
+    font-family: "Pinyon Script", cursive;
+    font-weight: 400;
+}
+
+main h2 {
+    font-size: 48px;
+    text-align: center;
+}
+
+/* ==================================================
+   3. COMPONENTES COMUNES
+================================================== */
+
+
+/* ---------- HEADER ---------- */
+
+header {
+    background-color: var(--pink);
+}
+
+
+/* barra de A */
+
+.a-bar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    min-height: 64px;
+    padding: 8px 38px;
+
+    background-color: var(--black);
+
+    border-radius: 0 0 var(--radius-medium) var(--radius-medium);
+
+    color: var(--red);
+
+    font-family: "Schoolbell", cursive;
+    font-size: 21px;
+}
+
+.a-bar img {
+    width: 55px;
+}
+
+
+/* ---------- TÍTULO DE PÁGINAS ---------- */
+
+.page-title {
+    padding: 28px 20px 18px;
+
+    font-size: 60px;
+    text-align: center;
+}
+
+
+/* ---------- BUSCADOR ---------- */
+
+.search {
+    display: flex;
+    align-items: center;
+
+    width: 92%;
+    height: 52px;
+
+    margin: 0 auto 28px;
+    padding: 0 22px;
+
+    background-color: var(--red);
+
+    border-radius: 30px;
+
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.25);
+}
+
+.search span {
+    font-size: 31px;
+}
+
+.search input {
+    width: 100%;
+    height: 100%;
+
+    margin-left: 10px;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: var(--white);
+    font-size: 18px;
+}
+
+.search input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* ---------- NAVEGACIÓN ---------- */
+
+nav {
+    padding-bottom: 38px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22px;
+
+    list-style: none;
+}
+
+nav a {
+    display: block;
+
+    padding: 12px 22px;
+
+    background-color: var(--white);
+    color: var(--red);
+
+    border-radius: 30px;
+
+    font-size: 20px;
+
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ---------- PORTADAS ---------- */
+
+.hero {
+    width: 100%;
+    height: 500px;
+
+    object-fit: cover;
+
+    border-bottom: 18px solid var(--red);
+    border-radius: 55px 55px 65px 65px;
+}
+
+/* solamente cambia el encuadre */
+
+.hero-index {
+    object-position: center 28%;
+}
+
+.hero-historia {
+    object-position: center;
+}
+
+
+/* ---------- SECCIONES ---------- */
+
+.section {
+    padding: var(--padding-section);
+}
+
+.section > h2 {
+    margin-bottom: 30px;
+}
+
+.section-white {
+    background-color: var(--white);
+}
+
+.section-pink {
+    background-color: var(--pink);
+}
+
+
+/* ---------- TARJETAS ---------- */
+
+.card {
+    padding: 22px;
+
+    background-color: var(--white);
+
+    border-radius: var(--radius-medium);
+}
+
+
+/* ---------- FORMULARIOS ---------- */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    max-width: 700px;
+    margin: auto;
+
+    padding: 28px;
+
+    background-color: var(--pink);
+
+    border-radius: var(--radius-medium);
+}
+
+form label {
+    font-weight: 600;
+}
+
+form input,
+form textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 2px solid transparent;
+    border-radius: var(--radius-small);
+
+    background-color: var(--white);
+
+    outline: none;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--red);
+}
+
+form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+form button {
+    align-self: flex-start;
+
+    margin-top: 8px;
+    padding: 10px 22px;
+
+    background-color: var(--red);
+    color: var(--white);
+
+    border-radius: 25px;
+
+    font-weight: 600;
+}
+
+
+/* ==================================================
+   4. INDEX
+================================================== */
+
+
+/* logo */
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 30px 0 20px;
+}
+
+.brand img {
+    width: clamp(330px, 45vw, 570px);
+}
+
+.brand h2 {
+    margin-top: -18px;
+
+    font-size: 34px;
+    font-weight: 500;
+}
+
+
+/* ---------- INTRO ---------- */
+
+.intro {
+    position: relative;
+
+    padding: 70px 80px 95px;
+
+    background-color: var(--white);
+}
+
+.intro h2 {
+    position: relative;
+    z-index: 4;
+
+    width: 94%;
+
+    margin: 0 auto 55px;
+    padding: 24px 30px;
+
+    background-color: var(--black);
+    color: var(--white);
+
+    border-radius: var(--radius-large);
+
+    font-size: 50px;
+}
+
+.intro > img:first-of-type {
+    position: absolute;
+    z-index: 1;
+
+    top: 200px;
+    left: 5%;
+
+    width: 90%;
+    height: 66%;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+
+    transform: rotate(-4deg);
+
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+}
+
+.intro > div,
+.intro > p,
+.intro > img:last-of-type {
+    position: relative;
+    z-index: 2;
+}
+
+.intro > div {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: start;
+    gap: 35px;
+
+    width: 86%;
+
+    margin: 0 auto 10px;
+}
+
+.intro > div img {
+    width: 100%;
+
+    border-radius: 25px;
+
+    transform: rotate(3deg);
+}
+
+.intro p {
+    width: 82%;
+
+    margin: 0 auto 24px;
+
+    font-family: "Schoolbell", cursive;
+    font-size: 27px;
+    line-height: 1.25;
+}
+
+.intro > div p {
+    width: 100%;
+}
+
+.intro > p:last-of-type {
+    font-family: "Montserrat", sans-serif;
+    font-size: 29px;
+    font-weight: 600;
+}
+
+.intro-signature {
+    width: 75px;
+
+    margin: -15px 10% 0 auto;
+
+    transform: rotate(-8deg);
+}
+
+
+/* ---------- THE LIARS ---------- */
+
+.liars {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(2, 220px);
+    justify-content: center;
+    gap: 18px;
+
+    padding: 30px 50px 45px;
+
+    margin-bottom: 220px;
+
+    background-color: var(--black);
+
+    border-radius: 45px;
+}
+
+.liars h2 {
+    grid-column: 1 / -1;
+
+    margin-bottom: 5px;
+
+    color: var(--white);
+
+    font-size: 52px;
+}
+
+.liar-card {
+    overflow: hidden;
+
+    width: 220px;
+
+    background-color: var(--red);
+
+    border-radius: 18px;
+}
+
+.liar-card img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    border: 5px solid var(--red);
+    border-radius: 18px 18px 12px 12px;
+}
+
+.liar-card p {
+    padding: 3px 5px 6px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.liar-card.alison {
+    position: absolute;
+
+    grid-column: 1 / -1;
+    justify-self: center;
+
+    bottom: -220px;
+
+    z-index: 3;
+}
+
+.liars::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -230px;
+
+    width: 290px;
+    height: 240px;
+
+    transform: translateX(-50%);
+
+    background-color: var(--black);
+
+    border-radius: 0 0 45px 45px;
+
+    z-index: 1;
+}
+
+
+/* ---------- GALERÍA INDEX ---------- */
+
+.gallery {
+    position: relative;
+
+    width: 88%;
+
+    margin: auto;
+    padding: 22px 30px 45px;
+
+    background-color: var(--pink);
+}
+
+.gallery h2 {
+    padding: 12px 18px;
+
+    background-color: var(--black);
+    color: var(--white);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
+}
+
+.gallery h2 span {
+    color: var(--red);
+}
+
+.gallery-track {
+    display: flex;
+    gap: 18px;
+
+    margin-top: 15px;
+    padding: 12px;
+
+    overflow-x: hidden;
+
+    background-color: var(--white);
+
+    border-radius: 0 0 20px 20px;
+
+    scroll-behavior: smooth;
+}
+
+.gallery-track img {
+    flex: 0 0 calc(50% - 9px);
+
+    height: 315px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+}
+
+.gallery-track img.vertical {
+    object-fit: contain;
+
+    background-color: var(--black);
+}
+
+.gallery-btn {
+    position: absolute;
+    z-index: 5;
+
+    top: 54%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 65px;
+
+    background-color: var(--white);
+
+    border-radius: 50%;
+
+    color: var(--black);
+}
+
+.gallery-btn span {
+    font-size: 55px;
+}
+
+.previous {
+    left: 2px;
+}
+
+.next {
+    right: 2px;
+}
+
+
+/* ---------- MENSAJE A ---------- */
+
+.a-message {
+    width: fit-content;
+
+    margin: 80px auto 5px;
+
+    color: var(--red);
+
+    font-family: "Schoolbell", cursive;
+    font-size: 28px;
+    font-weight: 400;
+
+    transform: rotate(-7deg);
+}
+
+.a-signature {
+    width: 55px;
+
+    margin: 0 auto 70px;
+
+    transform: rotate(-7deg);
+}
+
+
+/* ==================================================
+   5. HISTORIA Y COMUNIDAD
+================================================== */
+
+/* historia */
+
+.historia {
+    background-color: var(--black);
+}
+
+.historia > div {
+    display: grid;
+    grid-template-columns: 0.9fr 1.4fr;
+    gap: 40px;
+    align-items: start;
+    padding: 30px;
+    background-color: var(--light-pink);
+    border-radius: var(--radius-medium);
+}
+
+.historia img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: var(--radius-small);
+}
+
+.historia p {
+    margin-bottom: 14px;
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--red);
+}
+
+.historia h2{
+    color: var(--red);
+}
+
+
+/* curiosidades */
+
+.curiosidad {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 24px;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+}
+
+.curiosidad h3 {
+    margin-bottom: 8px;
+
+    color: var(--red);
+
+    font-size: 21px;
+}
+
+.curiosidad p {
+    line-height: 1.5;
+}
+
+.curiosidad img {
+    grid-column: 2;
+    grid-row: 1 / 3;
+
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: var(--radius-small);
+}
+
+
+/* reseñas */
+
+.resena {
+    margin-bottom: 18px;
+
+    background-color: var(--light-pink);
+    color: var(--black);
+
+    border-left: 6px solid var(--red);
+}
+
+.resena > p:first-child {
+    margin-bottom: 4px;
+
+    color: var(--red);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.resena h3 {
+    margin-bottom: 8px;
+
+    font-size: 20px;
+}
+
+.resena > p:last-child {
+    line-height: 1.5;
+}
+
+.comunidad {
+    position: relative;
+    margin-top: -35px;
+    padding-top: 70px;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 45px 45px 0 0;
+}
+
+.comunidad h2 {
+    color: var(--pink);
+}
+
+.comunidad > h3 {
+    margin: 35px 0 18px;
+    font-family: "Pinyon Script", cursive;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* ==================================================
+   PERSONAJES
+================================================== */
+
+.hero-personajes {
+    object-position: center 35%;
+}
+
+
+
+/* personajes principales */
+.principales{
+    background-color: var(--light-pink);
+    
+}
+
+.personajes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+
+    max-width: 850px;
+    margin: auto;
+}
+
+.personaje-card{
+    background-color: var(--pink);
+}
+
+.personaje-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+
+    border-radius: var(--radius-small);
+}
+
+.principales h2{
+    color: var(--red);
+    background-color: var(--pink);
+    border-radius: 35px;
+    padding: 8px 20px;
+}
+
+.personaje-card h3, .secundario-card h3, .romance-card h3 {
+    margin: 12px 0 8px;
+    color: var(--red);
+}
+
+.personaje-card p, .secundario-card p {
+    line-height: 1.45;
+}
+
+.alison-card {
+    grid-column: 1 / 3;
+    justify-self: center;
+    width: 50%;
+}
+
+
+/* personajes secundarios */
+
+.carrusel-personajes {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.secundarios-track {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.secundario-card {
+    flex: 0 0 calc(33.33% - 14px);
+}
+
+.secundario-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-small);
+}
+
+.personaje-btn {
+    position: absolute;
+    z-index: 2;
+    width: 45px;
+    height: 45px;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 50%;
+}
+
+.personaje-btn span {
+    font-size: 32px;
+}
+
+.anterior {
+    left: -20px;
+}
+
+.siguiente {
+    right: -20px;
+}
+
+
+/* romances */
+.romances{
+background-color: var(--light-pink);
+}
+
+.romances-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+
+    max-width: 850px;
+    margin: auto;
+}
+
+.romance-card{
+    background-color: var(--black);
+}
+
+.romance-card img {
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+
+    border-radius: var(--radius-small);
+}
+
+.romance-card h3 {
+    text-align: center;
+}
+
+.romances h2{
+    color: var(--red);
+}
+
+/* ==================================================
+   TEMPORADAS
+================================================== */
+
+.hero-temporadas {
+    object-position: center 35%;
+}
+
+
+/* INTRO */
+
+.intro-temporadas {
+    text-align: center;
+    color: var(--pink);
+}
+
+.intro-temporadas p {
+    max-width: 700px;
+    margin: auto;
+
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+/* LISTA DE TEMPORADAS */
+
+.temporadas-lista {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.temporada-card {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 20px;
+
+    align-content: start;
+}
+
+.temporada-card img {
+    grid-row: 1 / 9;
+
+    width: 100%;
+    height: 260px;
+
+    object-fit: cover;
+
+    border-radius: var(--radius-small);
+}
+
+.temporada-card h3 {
+    color: var(--red);
+
+    font-size: 24px;
+}
+
+.temporada-card h4 {
+    margin-top: 10px;
+
+    color: var(--red);
+
+    font-size: 17px;
+}
+
+.temporada-card p {
+    line-height: 1.45;
+}
+
+.temporada-card:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 14px);
+}
+
+/* VOTACIÓN */
+
+.votacion {
+    background-color: var(--black);
+    color: var(--white);
+
+    text-align: center;
+}
+
+.votacion h2 {
+    color: var(--pink);
+}
+
+.votacion > p {
+    margin-bottom: 25px;
+
+    font-size: 18px;
+}
+
+.votacion-form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+
+    max-width: 850px;
+
+    background-color: transparent;
+}
+
+.votacion-form label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 14px 10px;
+
+    background-color: var(--light-pink);
+    color: var(--black);
+
+    border-radius: var(--radius-medium);
+
+    cursor: pointer;
+}
+
+.votacion-form input[type="radio"] {
+    width: auto;
+}
+
+.votacion-form button {
+    grid-column: 1 / -1;
+
+    justify-self: center;
+
+    margin-top: 10px;
+}
+
+.mensaje-voto {
+    display: none;
+    margin-top: 25px;
+
+    color: var(--pink);
+    text-align: center;
+    font-size: 18px;
+}
+
+.mensaje-voto span {
+    font-family: "Schoolbell", cursive;
+    color: var(--red);
+    font-size: 24px;
+}
+
+/* ==================================================
+   CONTACTOS
+================================================== */
+
+.hero-contactos {
+    object-position: center 35%;
+}
+
+
+/* ---------- DATOS DE CONTACTO ---------- */
+
+.contacto {
+    text-align: center;
+    color: var(--red);
+}
+
+.contacto-dato {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    max-width: 700px;
+    margin: 0 auto 18px;
+    padding: 18px 25px;
+
+    background-color: var(--light-pink);
+
+    border-radius: var(--radius-medium);
+}
+
+.contacto-dato span {
+    color: var(--red);
+    font-size: 34px;
+}
+
+.contacto-dato a {
+    font-size: 18px;
+}
+
+
+/* ---------- INICIO DE SESIÓN ---------- */
+
+.login form {
+    max-width: 600px;
+
+    background-color: var(--white);
+}
+
+.login form button {
+    align-self: center;
+
+    margin-top: 15px;
+
+    padding: 12px 35px;
+}
+
+
+
+/* ---------- MENSAJE ---------- */
+
+.mensaje > p {
+    max-width: 700px;
+
+    margin: 0 auto 25px;
+
+    text-align: center;
+    line-height: 1.5;
+}
+
+.mensaje form {
+    max-width: 700px;
+}
+
+.mensaje textarea {
+    min-height: 180px;
+}
+
+/* ==================================================
+   GALERÍA
+================================================== */
+
+.hero-galeria {
+    object-position: center 35%;
+}
+
+/* secciones */
+
+
+/* títulos */
+.galeria {
+    background-color: var(--pink);
+}
+.galeria-seccion h2 {
+    width: fit-content;
+    margin: 0 auto 30px;
+    padding: 8px 25px;
+    background-color: var(--light-pink);
+    border-radius: 30px;
+    color: var(--black);
+}
+
+/* carrusel */
+
+.carrusel-galeria {
+    position: relative;
+
+    max-width: 1050px;
+    margin: auto;
+    padding: 22px;
+
+    background-color: var(--light-pink);
+
+    border-radius: var(--radius-large);
+}
+
+.galeria-pista {
+    display: flex;
+    gap: 18px;
+
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    border-radius: var(--radius-medium);
+}
+
+.galeria-pista img {
+    flex: 0 0 calc(33.33% - 12px);
+
+    height: 280px;
+
+    object-fit: cover;
+
+    border-radius: var(--radius-medium);
+}
+
+.portadas-galeria .galeria-pista img {
+    flex: 0 0 calc(25% - 14px);
+
+    height: 360px;
+
+    object-fit: contain;
+
+    background-color: var(--black);
+}
+
+/* flechas */
+
+.galeria-flecha {
+    position: absolute;
+    top: 50%;
+
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    transform: translateY(-50%);
+
+    background-color: var(--black);
+    color: var(--white);
+
+    border-radius: 50%;
+}
+
+.galeria-flecha span {
+    font-size: 32px;
+}
+
+.anterior-galeria {
+    left: -24px;
+}
+
+.siguiente-galeria {
+    right: -24px;
+}
+
+/* ==================================================
+   6. FOOTER
+================================================== */
+
+footer {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+
+    padding: 60px 15% 30px;
+
+    background-color: var(--black);
+    color: var(--white);
+}
+
+footer::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 5%;
+
+    width: 90%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--old-pink),
+        var(--pink),
+        var(--old-pink),
+        transparent
+    );
+}
+
+.footer-columna h4 {
+    margin-bottom: 8px;
+
+    color: var(--pink);
+
+    font-family: "Pinyon Script", cursive;
+    font-size: 34px;
+    font-weight: 400;
+}
+
+.footer-columna p,
+.footer-columna a {
+    display: block;
+
+    margin-bottom: 4px;
+
+    line-height: 1.4;
+}
+
+.copyright {
+    grid-column: 1 / -1;
+
+    margin-top: 25px;
+
+    text-align: center;
+    font-size: 12px;
+}
+
+/* ==================================================
+   7. RESPONSIVE
+================================================== */
+
+@media (max-width: 900px) {
+
+    .page-title {
+        font-size: 44px;
+    }
+
+    nav ul {
+        gap: 8px;
+    }
+
+    nav a {
+        padding: 8px 12px;
+
+        font-size: 13px;
+    }
+
+    .hero {
+        height: 320px;
+    }
+
+    .section {
+        padding: 40px 25px;
+    }
+
+    main h2 {
+        font-size: 34px;
+    }
+
+    .historia > div,
+    .curiosidad {
+        grid-template-columns: 1fr;
+    }
+
+    .historia img,
+    .curiosidad img {
+        height: 230px;
+    }
+
+    .curiosidad img {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .gallery-track img {
+        height: 240px;
+    }
+
+    footer {
+        padding: 45px 35px 25px;
+    }
+
+    .personajes-grid, .romances-grid {
+    grid-template-columns: 1fr;
+    }
+
+    .alison-card {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    .secundario-card {
+        flex: 0 0 calc(50% - 10px);
+    }
+
+    .temporadas-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .temporada-card {
+        grid-template-columns: 140px 1fr;
+    }
+
+    .temporada-card img {
+        height: 220px;
+    }
+
+    .votacion-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galeria-pista img {
+        flex: 0 0 calc(50% - 9px);
+        height: 220px;
+    }
+
+    .galeria-flecha {
+        width: 40px;
+        height: 40px;
+    }
+
+    .anterior-galeria {
+        left: -15px;
+    }
+
+    .siguiente-galeria {
+        right: -15px;
+    }
+}
+
+
