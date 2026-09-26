@@ -21,23 +21,20 @@
             <p>did you miss me?</p>
         </div>
         <h1 class="page-title">Contactos</h1>
-        <div class="search">
-            <span class="material-symbols-outlined">search</span>
-            <input type="search" placeholder="Buscar...">
-        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="historia-comunidad.html">Historia y comunidad</a></li>
-                <li><a href="temporadas.html">Temporadas</a></li>
                 <li><a href="personajes.html">Personajes</a></li>
+                <li><a href="temporadas.html">Temporadas</a></li>
                 <li><a href="galeria.html">Galería</a></li>
+                <li><a class="active" href="contactos.html">Contactos</a></li>
             </ul>
         </nav>
         <img class="hero hero-contactos" src="images/portada-contacto.png" alt="Protagonistas mirando sus celulares en el parque">
         </header>
             <main>
-            <section class="section section-white contacto">
+            <section class="section contacto section-white">
                 <h2>Contacto</h2>
                 <div class="contacto-dato">
                     <span class="material-symbols-outlined">photo_camera</span>
@@ -49,29 +46,31 @@
                     <a href="mailto:contacto@pllweb.com"> contacto@pllweb.com</a>
                 </div>
             </section>
-            <section class="section section-pink login">
-            <h2>Iniciá sesión</h2>
+            <section class="section mensaje">
+                <h2>¿Tenés algo para contarnos?</h2>
+                <p>Mandanos tu comentario, sugerencia o teoría. Prometemos no contárselo a “A”.</p>
                 <form>
-                    <label for="email-login">Mail</label>
-                    <input type="email" id="email-login" name="email-login" required>
-                    <label for="contrasena">Contraseña</label>
-                    <input type="password" id="contrasena" name="contrasena" required>
-                    <button type="submit">Iniciar sesión</button>
-                </form>
-        </section>
-        <section class="section section-white mensaje">
-            <h2>¿Tenés algo para contarnos?</h2>
-            <p>Mandanos tu comentario, sugerencia o teoría. Prometemos no contárselo a “A”.</p>
-            <form>
                 <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" name="nombre" required>
-                <label for="email">Mail</label>
-                <input type="email" id="email" name="email" required>
-                <label for="mensaje">Mensaje</label>
+                <label for="email">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required>
+                <label for="mensaje">Tu mensaje</label>
                 <textarea id="mensaje" name="mensaje" required></textarea>
                 <button type="submit">Enviar</button>
             </form>
-        </section>
+            </section>
+            <div class="mensaje-formulario" id="mensaje-formulario">
+                <div class="mensaje-formulario-contenido">
+                    <span class="mensaje-a">-A</span>
+                    <h3>Mensaje enviado</h3>
+                    <p id="texto-mensaje"></p>
+                    <button type="button" id="cerrar-mensaje">Aceptar</button>
+                </div>
+            </div>
             </main>
             <footer>
             <div class="footer-columna">
@@ -87,7 +86,7 @@
                 <a href="https://prettylittleliars.fandom.com/wiki/Main_Page">Wiki: Fanpage de Pretty Little Liars
                 </a>
             </div>
-            <p class="copyright">© 2026 · Sitio realizado con fines académicos · Pretty Little Liars</p>
+            <p class="copyright">© 2026 · Sitio realizado con fines académicos por Bianca Fornataro · Pretty Little Liars</p>
         </footer>
         <script src="script.js"></script>
     </body>

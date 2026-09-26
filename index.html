@@ -24,12 +24,9 @@
             <img src="images/prettylittleliars-logo.png" alt="Logo original de Pretty Little Liars en cursiva">
             <h2>web</h2>
         </div>
-        <div class="search">
-            <span class="material-symbols-outlined">search</span>
-            <input type="search" placeholder="Buscar...">
-        </div>
         <nav>
             <ul>
+                <li><a class="active" href="index.html">Inicio</a></li>
                 <li><a href="historia-comunidad.html">Historia y comunidad</a></li>
                 <li><a href="personajes.html">Personajes</a></li>
                 <li><a href="temporadas.html">Temporadas</a></li>
@@ -75,23 +72,32 @@
                     </div>
                 </section>
                 <section class="gallery">
-                <h2><a href="galeria.html">Galería <span>PLL</span></a></h2>
-                <button class="gallery-btn previous" type="button" aria-label="Imagen anterior">
-                    <span class="material-symbols-outlined">arrow_left</span>
-                </button>
-                <div class="gallery-track">
-                    <img class="vertical" src="images/protagonistas-espejo.png" alt="Protagonistas mirando al espejo">
-                    <img src="images/recuerdo-pequeñas.png" alt="Protagonistas de pequeñas">
-                    <img src="images/protagonistas-naranja.png" alt="Protagonistas vestidas de prisioneras">
-                    <img src="images/mensaje-velorio.png" alt="Protagonistas mirando sus teléfonos">
-                </div>
-                <button class="gallery-btn next" type="button" aria-label="Imagen siguiente">
-                    <span class="material-symbols-outlined">arrow_right</span>
-                </button>
-            </section>
-            </section>
+                    <h2><a href="galeria.html">Galería <span>PLL</span></a></h2>
+                    <button class="gallery-btn previous" type="button" aria-label="Imagen anterior">
+                        <span class="material-symbols-outlined">arrow_left</span>
+                    </button>
+                    <div class="gallery-track">
+                        <img class="vertical"
+                            src="images/protagonistas-espejo.png"
+                            alt="Protagonistas mirando al espejo">
+                        <img src="images/recuerdo-pequeñas.png"
+                            alt="Protagonistas de pequeñas">
+                        <img src="images/protagonistas-naranja.png"
+                            alt="Protagonistas vestidas de prisioneras">
+                        <img src="images/mensaje-velorio.png"
+                            alt="Protagonistas mirando sus teléfonos">
+                    </div>
+                    <button class="gallery-btn next" type="button" aria-label="Imagen siguiente">
+                        <span class="material-symbols-outlined">arrow_right</span>
+                    </button>
+                </section>
             <h3 class="a-message">I'm still here and i know everything</h3>
             <img class="a-signature" src="images/a-logo.png" alt="Firma a mano de A en rojo, la acosadora encubierta de las protagonistas">
+            <div class="lightbox" id="lightbox">
+            <button class="lightbox-cerrar" type="button">&times;
+            </button>
+            <img class="lightbox-imagen" src="" alt="">
+            </div>
             </main>
             <footer>
             <div class="footer-columna">
@@ -107,8 +113,12 @@
                 <a href="https://prettylittleliars.fandom.com/wiki/Main_Page">Wiki: Fanpage de Pretty Little Liars
                 </a>
             </div>
-            <p class="copyright">© 2026 · Sitio realizado con fines académicos · Pretty Little Liars</p>
+            <p class="copyright">© 2026 · Sitio realizado con fines académicos por Bianca Fornataro · Pretty Little Liars</p>
         </footer>
+        <div class="imagen-modal">
+            <span class="cerrar-imagen">&times;</span>
+            <img class="imagen-modal-contenido" src="" alt="Imagen ampliada">
+        </div>
         <script src="script.js"></script>
     </body>
 </html>

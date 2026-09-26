@@ -21,13 +21,10 @@
             <p>did you miss me?</p>
         </div>
         <h1 class="page-title">Historia y comunidad</h1>
-        <div class="search">
-            <span class="material-symbols-outlined">search</span>
-            <input type="search" placeholder="Buscar...">
-        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
+                <li><a  class="active"href="historia-comunidad.html">Historia y comunidad</a></li>
                 <li><a href="personajes.html">Personajes</a></li>
                 <li><a href="temporadas.html">Temporadas</a></li>
                 <li><a href="galeria.html">Galería</a></li>
@@ -42,9 +39,23 @@
                     <div>
                         <img src="images/fotos-presas.jpg" alt="imágenes de los expedientes de las protagonistas">
                         <div class="historia-texto">
-                            <p>Pretty Little Liars comienza con la misteriosa desaparición de Alison DiLaurentis, la líder de un grupo de cinco amigas de Rosewood. Un año después, Aria, Spencer, Hanna y Emily vuelven a acercarse cuando empiezan a recibir mensajes de una persona anónima que firma como “-A” y que conoce secretos que creían que solo Alison sabía.</p>
-                            <p>A partir de ahí, las chicas intentan descubrir quién está detrás de los mensajes mientras salen a la luz secretos, mentiras y nuevos misterios relacionados con la desaparición de Alison. Con el paso de las temporadas, la identidad de “A” cambia y el juego se vuelve cada vez más peligroso, involucrando también a sus familias, parejas y otros habitantes de Rosewood.</p>
-                            <p>La serie combina misterio, drama, amistad y romance durante 7 temporadas y 160 episodios, siguiendo a las protagonistas hasta descubrir finalmente quién está detrás del último juego de “A”.</p>
+                            <p>
+                                Pretty Little Liars comienza con la <strong>misteriosa desaparición de Alison DiLaurentis</strong>, 
+                                la líder de un grupo de cinco amigas de Rosewood. Un año después, Aria, Spencer, Hanna y Emily 
+                                vuelven a acercarse cuando empiezan a recibir <strong>mensajes de una persona anónima que firma como “-A”</strong> 
+                                y que conoce secretos que creían que solo Alison sabía.
+                            </p>
+                            <p>
+                                A partir de ahí, las chicas intentan descubrir <strong>quién está detrás de los mensajes</strong> 
+                                mientras salen a la luz secretos, mentiras y nuevos misterios relacionados con la desaparición de Alison. 
+                                Con el paso de las temporadas, <strong>la identidad de “A” cambia</strong> y el juego se vuelve cada vez 
+                                más peligroso, involucrando también a sus familias, parejas y otros habitantes de Rosewood.
+                            </p>
+                            <p>
+                                La serie combina <strong>misterio, drama, amistad y romance</strong> durante 
+                                <strong>7 temporadas y 160 episodios</strong>, siguiendo a las protagonistas hasta descubrir finalmente 
+                                quién está detrás del último juego de “A”.
+                            </p>
                         </div>
                     </div>
                 </section>
@@ -57,6 +68,14 @@
                     </div>
                     <div class="card curiosidad">
                         <h3>Hanna eligió indirectamente la canción de la intro</h3>
+                        <iframe 
+                            class="spotify-player"
+                            src="https://open.spotify.com/embed/track/7eoC95sT8KxeZGPAikDOAm"
+                            width="100%"
+                            height="80"
+                            frameborder="0"
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+                        </iframe>
                         <p>Ashley Benson escuchaba “Secret” de The Pierces mientras filmaban el piloto y pensó que era perfecta para la serie. Se la mostró a los responsables del programa y terminó convirtiéndose en el tema principal de PLL.</p>
                         <img src="images/intro-pll.jpg" alt="Protagonistas mirando discretamente a los lados en el cementerio">
                     </div>
@@ -99,7 +118,7 @@
                         <p>Más allá del misterio, me encanta toda la estética de la serie. Rosewood, la ropa, las casas, la música… tiene algo muy de los 2010 que me da ganas de volver a verla.</p>
                     </div>
                     <h3>¡Dejá tu reseña!</h3>
-                    <form>
+                    <form class="form-resena">
                         <label for="nombre">Nombre</label>
                         <input type="text" id="nombre" name="nombre">
                         <label for="opinion">Tu opinión</label>
@@ -107,6 +126,14 @@
                         <button type="submit">Publicar reseña</button>
                     </form>
                 </section>
+                <div class="mensaje-formulario" id="mensaje-formulario">
+                <div class="mensaje-formulario-contenido">
+                    <span class="mensaje-a">-A</span>
+                    <h3>Mensaje enviado</h3>
+                    <p id="texto-mensaje"></p>
+                    <button type="button" id="cerrar-mensaje">Aceptar</button>
+                </div>
+            </div>
             </main>
             <footer>
             <div class="footer-columna">
@@ -122,7 +149,8 @@
                 <a href="https://prettylittleliars.fandom.com/wiki/Main_Page">Wiki: Fanpage de Pretty Little Liars
                 </a>
             </div>
-            <p class="copyright">© 2026 · Sitio realizado con fines académicos · Pretty Little Liars</p>
+            <p class="copyright">© 2026 · Sitio realizado con fines académicos por Bianca Fornataro · Pretty Little Liars</p>
         </footer>
+        <script src="script.js"></script>
     </body>
 </html>

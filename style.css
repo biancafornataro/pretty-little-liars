@@ -43,7 +43,7 @@ body {
 .page-title {
     padding: 28px 20px 18px;
     font-family: "Pinyon Script", cursive;
-    font-size: 60px;
+    font-size: 100px;
     font-weight: 400;
     text-align: center;
 }
@@ -119,7 +119,7 @@ header {
 .page-title {
     padding: 28px 20px 18px;
 
-    font-size: 60px;
+    font-size: 130px;
     text-align: center;
 }
 
@@ -197,19 +197,32 @@ nav a {
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
 }
 
+nav ul li a.active {
+    background-color:var(--red) !important;
+    color: white !important;
+}
 
 /* ---------- PORTADAS ---------- */
 
 .hero {
     width: 100%;
-    height: 500px;
+    height: 100%;
 
     object-fit: cover;
+    object-position: center 28%;
 
-    border-bottom: 18px solid var(--red);
-    border-radius: 55px 55px 65px 65px;
+    animation: zoomHero 6s ease-out forwards;
 }
 
+@keyframes zoomHero {
+    from {
+        transform: scale(1.08);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
 /* solamente cambia el encuadre */
 
 .hero-index {
@@ -220,6 +233,17 @@ nav a {
     object-position: center;
 }
 
+.hero-container {
+    width: 100%;
+    height: 500px;
+
+    overflow: hidden;
+
+    border-bottom: 18px solid var(--red);
+    border-radius: 0 0 65px 65px;
+
+    background-color: transparent;
+}
 
 /* ---------- SECCIONES ---------- */
 
@@ -310,6 +334,91 @@ form button {
     font-weight: 600;
 }
 
+/* MENSAJE FORMULARIO */
+
+.mensaje-formulario {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.mensaje-formulario.activo {
+    display: flex;
+}
+
+.mensaje-formulario-contenido {
+    position: relative;
+
+    width: 450px;
+    padding: 40px;
+
+    background-color: var(--white);
+
+    border: 4px solid var(--pink);
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+.mensaje-formulario-contenido h3 {
+    margin-bottom: 15px;
+
+    color: var(--red);
+
+    font-family: "Pinyon Script", cursive;
+    font-size: 42px;
+}
+
+.mensaje-formulario-contenido p {
+    margin-bottom: 25px;
+
+    color: var(--black);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+}
+
+.mensaje-formulario-contenido button {
+    padding: 12px 30px;
+
+    background-color: var(--red);
+    color: var(--white);
+
+    border: none;
+    border-radius: 25px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.mensaje-formulario-contenido button:hover {
+    background-color: var(--black);
+}
+
+.mensaje-a {
+    position: absolute;
+
+    right: 25px;
+    bottom: 15px;
+
+    color: var(--red);
+
+    font-family: "Schoolbell", cursive;
+    font-size: 25px;
+
+    transform: rotate(-10deg);
+}
 
 /* ==================================================
    4. INDEX
@@ -339,105 +448,118 @@ form button {
 
 
 /* ---------- INTRO ---------- */
-
 .intro {
     position: relative;
-
     padding: 70px 80px 95px;
-
-    background-color: var(--white);
+   
 }
 
+/* TÍTULO */
 .intro h2 {
     position: relative;
-    z-index: 4;
+    z-index: 5;
+    width: 72%;
+    margin: 0 auto -18px;
+    padding: 16px 25px;
 
-    width: 94%;
+    background-color: var(--red);
+    color: var(--black);
 
-    margin: 0 auto 55px;
-    padding: 24px 30px;
+    font-family: "Pinyon Script", cursive;
+    font-size: 48px;
+    font-weight: 400;
+    text-align: center;
 
-    background-color: var(--black);
-    color: var(--white);
+    border-radius: 35px;
 
-    border-radius: var(--radius-large);
-
-    font-size: 50px;
+    transform: rotate(-1deg);
 }
 
-.intro > img:first-of-type {
+/* PAPEL */
+.intro .paper-bg {
     position: absolute;
     z-index: 1;
 
-    top: 200px;
-    left: 5%;
+    top: 85px;
+    left: 4%;
 
-    width: 90%;
-    height: 66%;
+    width: 92%;
+    height: calc(100% - 70px);
 
     object-fit: cover;
 
-    border-radius: 30px;
+    border-radius: 18px;
 
-    transform: rotate(-4deg);
+    transform: rotate(-1.5deg);
 
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 20px rgba(0,0,0,.15);
 }
 
+/* TODO EL CONTENIDO ARRIBA DEL PAPEL */
 .intro > div,
 .intro > p,
-.intro > img:last-of-type {
+.intro-signature {
     position: relative;
-    z-index: 2;
+    z-index: 3;
 }
 
+/* PRIMER BLOQUE */
 .intro > div {
     display: grid;
-    grid-template-columns: 1.15fr 1fr;
-    align-items: start;
-    gap: 35px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
 
-    width: 86%;
-
-    margin: 0 auto 10px;
+    width: 78%;
+    margin: 0 auto;
+    padding-top: 65px;
 }
 
+/* TEXTO */
+.intro p {
+    font-family: "Schoolbell", cursive;
+    font-size: 25px;
+    line-height: 1.35;
+}
+
+/* FOTO DEL DIARIO */
 .intro > div img {
     width: 100%;
 
-    border-radius: 25px;
+    border: 7px solid white;
+
+    box-shadow: 0 7px 15px rgba(0,0,0,.25);
 
     transform: rotate(3deg);
 }
 
-.intro p {
-    width: 82%;
+/* SEGUNDO TEXTO */
+.intro > p:nth-of-type(1) {
+    width: 76%;
+    margin: 25px auto 15px;
 
-    margin: 0 auto 24px;
-
-    font-family: "Schoolbell", cursive;
-    font-size: 27px;
-    line-height: 1.25;
+    transform: rotate(.3deg);
 }
 
-.intro > div p {
-    width: 100%;
-}
+/* PREGUNTA FINAL */
+.intro > p:nth-of-type(2) {
+    width: 76%;
+    margin: 25px auto 0;
 
-.intro > p:last-of-type {
     font-family: "Montserrat", sans-serif;
-    font-size: 29px;
+    font-size: 25px;
     font-weight: 600;
 }
 
+/* FIRMA DE A */
 .intro-signature {
+    display: block;
+
     width: 75px;
+    margin: -5px 10% 0 auto;
 
-    margin: -15px 10% 0 auto;
-
-    transform: rotate(-8deg);
+    transform: rotate(-12deg);
 }
-
 
 /* ---------- THE LIARS ---------- */
 
@@ -445,101 +567,79 @@ form button {
     position: relative;
 
     display: grid;
-    grid-template-columns: repeat(2, 220px);
-    justify-content: center;
-    gap: 18px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 22px;
 
-    padding: 30px 50px 45px;
-
-    margin-bottom: 220px;
+    width: 100%;
+    padding: 35px 110px 60px;
 
     background-color: var(--black);
-
-    border-radius: 45px;
 }
 
 .liars h2 {
     grid-column: 1 / -1;
 
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 
     color: var(--white);
 
-    font-size: 52px;
+    text-align: center;
+    font-family: "Pinyon Script", cursive;
+    font-size: 55px;
+    font-weight: 400;
 }
 
+/* ARIA, EMILY Y HANNA */
 .liar-card {
+    grid-column: span 2;
+
+    width: 100%;
     overflow: hidden;
 
-    width: 220px;
-
     background-color: var(--red);
-
-    border-radius: 18px;
+    border-radius: 20px;
 }
 
 .liar-card img {
     width: 100%;
-    height: 220px;
+    height: 290px;
 
     object-fit: cover;
 
     border: 5px solid var(--red);
-    border-radius: 18px 18px 12px 12px;
+    border-radius: 20px 20px 10px 10px;
 }
 
 .liar-card p {
-    padding: 3px 5px 6px;
+    padding: 6px 5px 9px;
 
     text-align: center;
-    text-transform: uppercase;
-
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* SPENCER Y ALISON CENTRADAS ABAJO */
+.liar-card:nth-of-type(4) {
+    grid-column: 2 / 4;
 }
 
 .liar-card.alison {
-    position: absolute;
+    position: static;
 
-    grid-column: 1 / -1;
-    justify-self: center;
+    grid-column: 4 / 6;
+    justify-self: stretch;
 
-    bottom: -220px;
-
-    z-index: 3;
+    width: 100%;
 }
-
-.liars::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: -230px;
-
-    width: 290px;
-    height: 240px;
-
-    transform: translateX(-50%);
-
-    background-color: var(--black);
-
-    border-radius: 0 0 45px 45px;
-
-    z-index: 1;
-}
-
 
 /* ---------- GALERÍA INDEX ---------- */
 
 .gallery {
     position: relative;
-
     width: 88%;
-
-    margin: auto;
+    margin: 70px auto 0;
     padding: 22px 30px 45px;
-
     background-color: var(--pink);
 }
 
@@ -575,12 +675,11 @@ form button {
 
 .gallery-track img {
     flex: 0 0 calc(50% - 9px);
-
     height: 315px;
-
     object-fit: cover;
-
     border-radius: 18px;
+    cursor: pointer;
+    transition: none
 }
 
 .gallery-track img.vertical {
@@ -621,6 +720,64 @@ form button {
     right: 2px;
 }
 
+/* IMÁGENES EXPANDIBLES */
+
+.expandible {
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.expandible.imagen-ampliada {
+    z-index: 1000;
+
+    transform: scale(1.35);
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Zoom más natural únicamente en la galería del inicio */
+
+.gallery-track .expandible {
+    transition: none;
+}
+
+.gallery-track .expandible.imagen-ampliada {
+    transform: scale(1.35);
+    animation: zoomGaleriaInicio 0.25s ease-out forwards;
+}
+
+@keyframes zoomGaleriaInicio {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.35);
+    }
+}
+
+/* IMAGEN AMPLIADA PERSONAJES */
+
+.liar-card img {
+    cursor: pointer;
+}
+
+
+/* IMAGEN AMPLIADA PERSONAJES */
+
+.liar-card img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.liar-card img.imagen-expandida {
+    position: relative;
+    z-index: 100;
+    transform: scale(1.35);
+}
 
 /* ---------- MENSAJE A ---------- */
 
@@ -687,6 +844,9 @@ form button {
     color: var(--red);
 }
 
+.historia-texto strong {
+    font-weight: 700;
+}
 
 /* curiosidades */
 
@@ -724,6 +884,13 @@ form button {
     border-radius: var(--radius-small);
 }
 
+.spotify-player {
+    width: 650px;
+    max-width: 550px;
+    height: 80px;
+    border: none;
+    border-radius: 12px;
+}
 
 /* reseñas */
 
@@ -947,7 +1114,6 @@ background-color: var(--light-pink);
 
 
 /* LISTA DE TEMPORADAS */
-
 .temporadas-lista {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -959,44 +1125,55 @@ background-color: var(--light-pink);
     grid-template-columns: 180px 1fr;
     gap: 20px;
 
-    align-content: start;
+    align-items: start;
 }
 
-.temporada-card img {
-    grid-row: 1 / 9;
+.temporada-media {
+    grid-column: 1;
+    grid-row: 1 / 10;
 
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.temporada-media img {
+    width: 180px;
     height: 260px;
-
     object-fit: cover;
-
     border-radius: var(--radius-small);
+}
+
+.trailer-temporada {
+    width: 180px;
+    height: 210px;
+    border: none;
+    border-radius: var(--radius-small);
+}
+
+.temporada-card h3,
+.temporada-card h4,
+.temporada-card > p {
+    grid-column: 2;
 }
 
 .temporada-card h3 {
     color: var(--red);
-
     font-size: 24px;
 }
 
 .temporada-card h4 {
     margin-top: 10px;
-
     color: var(--red);
-
     font-size: 17px;
-}
-
-.temporada-card p {
-    line-height: 1.45;
+    font-weight: 700;
 }
 
 .temporada-card:last-child {
     grid-column: 1 / -1;
-    justify-self: center;
     width: calc(50% - 14px);
+    justify-self: center;
 }
-
 /* VOTACIÓN */
 
 .votacion {
@@ -1089,13 +1266,10 @@ background-color: var(--light-pink);
     display: flex;
     align-items: center;
     gap: 18px;
-
     max-width: 700px;
     margin: 0 auto 18px;
     padding: 18px 25px;
-
     background-color: var(--light-pink);
-
     border-radius: var(--radius-medium);
 }
 
@@ -1108,13 +1282,16 @@ background-color: var(--light-pink);
     font-size: 18px;
 }
 
+.mensaje h2{
+    color: var(--white);
+}
 
 /* ---------- INICIO DE SESIÓN ---------- */
 
 .login form {
     max-width: 600px;
 
-    background-color: var(--white);
+    background-color: var(--light-pink);
 }
 
 .login form button {
@@ -1161,13 +1338,24 @@ background-color: var(--light-pink);
 .galeria {
     background-color: var(--pink);
 }
+
+.galeria-seccion {
+    width: 88%;
+    margin: 0 auto 45px;
+    margin-top: 20pt;
+    padding: 35px 35px 30px;
+    background-color: var(--light-pink);
+    border-radius: var(--radius-large);
+}
+
 .galeria-seccion h2 {
     width: fit-content;
     margin: 0 auto 30px;
     padding: 8px 25px;
-    background-color: var(--light-pink);
+    background-color: var(--black);
     border-radius: 30px;
-    color: var(--black);
+    color: var(--pink);
+    font-size: 38px;
 }
 
 /* carrusel */
@@ -1206,14 +1394,11 @@ background-color: var(--light-pink);
 
 .portadas-galeria .galeria-pista img {
     flex: 0 0 calc(25% - 14px);
-
     height: 360px;
-
     object-fit: contain;
-
     background-color: var(--black);
-}
 
+}
 /* flechas */
 
 .galeria-flecha {
@@ -1247,6 +1432,63 @@ background-color: var(--light-pink);
 
 .siguiente-galeria {
     right: -24px;
+}
+
+/* LIGHTBOX GALERÍA */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px;
+
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.lightbox.activo {
+    display: flex;
+}
+
+.lightbox-imagen {
+    width: auto;
+    height: auto;
+
+    max-width: 85vw;
+    max-height: 85vh;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-cerrar {
+    position: absolute;
+
+    top: 25px;
+    right: 35px;
+
+    z-index: 10000;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+    font-size: 55px;
+
+    cursor: pointer;
+}
+
+.galeria-pista img {
+    cursor: pointer;
 }
 
 /* ==================================================
@@ -1397,6 +1639,15 @@ footer::before {
     .votacion-form {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .galeria-pista {
+    display: flex;
+    gap: 18px;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    border-radius: var(--radius-medium);
+}
 
     .galeria-pista img {
         flex: 0 0 calc(50% - 9px);
